@@ -7,8 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
   <title><%= webpackConfig.name %></title>
+  <script src='config/config.js' >
+    import config from "./config/config.js";
+</script>
 </head>
 <body>
+  <noscript>
+    <strong>如果不启用JavaScript，档案管理系统将无法正常运行。</strong>
+  </noscript>
 <div id="app"></div>
 <!-- built files will be auto injected -->
 </body>

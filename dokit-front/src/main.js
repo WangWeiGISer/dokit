@@ -1,5 +1,10 @@
 import Vue from 'vue'
 
+// 滚动条插件的包
+import PerfectScrollbar from 'perfect-scrollbar'
+// 滚动条插件对应的css
+import 'perfect-scrollbar/css/perfect-scrollbar.css'
+
 import Cookies from 'js-cookie'
 
 import 'normalize.css/normalize.css'
@@ -30,6 +35,36 @@ import router from './router/routers'
 
 import './assets/icons' // icon
 import './router/index' // permission control
+
+const elScrollBar = (el) => {
+  if (el._ps_ instanceof PerfectScrollbar) {
+    el._ps_.update()
+  } else {
+    el._ps_ = new PerfectScrollbar(el, { suppressScrollX: true })
+  }
+}
+
+Vue.directive('scrollBar', {
+  inserted(el, binding, vnode) {
+    const rules = ['fixed', 'absolute', 'relative']
+    if (!rules.includes(window.getComputedStyle(el, null).position)) {
+      console.error(`perfect-scrollbar所在的容器的position属性必须是以下之一：${rules.join('、')}`)
+    }
+    elScrollBar(el)
+  },
+  componentUpdated(el, binding, vnode, oldVnode) {
+    try {
+      vnode.context.$nextTick(
+        () => {
+          elScrollBar(el)
+        }
+      )
+    } catch (error) {
+      console.error(error)
+      elScrollBar(el)
+    }
+  }
+})
 
 Vue.use(VueHighlightJS)
 Vue.use(mavonEditor)

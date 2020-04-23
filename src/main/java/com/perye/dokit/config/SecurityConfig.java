@@ -127,6 +127,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 文件
                 .antMatchers("/avatar/**").permitAll()
                 .antMatchers("/file/**").permitAll()
+                .antMatchers("/api/file/**").permitAll()
                 // druid
                 .antMatchers("/druid/**").permitAll()
 

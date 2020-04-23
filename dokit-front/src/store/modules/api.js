@@ -19,6 +19,8 @@ const api = {
     swaggerApi: baseUrl + '/swagger-ui.html',
     // 文件上传
     fileUploadApi: baseUrl + '/api/localStorage',
+    // pdf文件流获取
+    pdfReadeApi: baseUrl + '/api/file/clxx/pdfStreamHandler',
     // baseUrl，
     baseApi: baseUrl,
     // 表单构建

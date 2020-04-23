@@ -8,7 +8,7 @@
       label-position="left"
       label-width="0px"
     >
-      <h3 class="title">dokit</h3>
+      <h3 class="title">金寨县土地整治档案档案查询系统</h3>
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
           <svg-icon slot="prefix" class="el-input__icon input-icon" icon-class="user" />
@@ -65,7 +65,6 @@ import { encrypt } from '@/utils/rsaEncrypt'
 import Config from '@/settings'
 import { getCodeImg } from '@/api/login'
 import Cookies from 'js-cookie'
-
 export default {
   name: 'Login',
   data() {
@@ -167,7 +166,8 @@ export default {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-image:url(http://api.neweb.top/bing.php?type=rand);
+    //background-image:url(http://api.neweb.top/bing.php?type=rand);
+    background-image:url(../images/th.jpg);
     background-size: cover;
   }
 

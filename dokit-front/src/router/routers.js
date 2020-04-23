@@ -34,16 +34,29 @@ export const constantRouterMap = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/map',
     children: [
       {
-        path: 'dashboard',
-        component: () => import('@/views/home'),
-        name: 'Dashboard',
+        path: 'map',
+        component: () => import('@/views/map'),
+        name: 'oneMap',
         meta: { title: '首页', icon: 'index', affix: true, noCache: true }
       }
     ]
   },
+  // {
+  //   path: '/',
+  //   component: Layout,
+  //   redirect: '/dashboard',
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       component: () => import('@/views/home'),
+  //       name: 'Dashboard',
+  //       meta: { title: '首页', icon: 'index', affix: true, noCache: true }
+  //     }
+  //   ]
+  // },
   {
     path: '/user',
     component: Layout,
